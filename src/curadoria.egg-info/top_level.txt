@@ -1,0 +1,6 @@
+core
+descritivas
+dicionarios
+utils
+validacao
+variaveis

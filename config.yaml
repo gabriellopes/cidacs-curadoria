@@ -1,0 +1,11 @@
+---
+
+database: 
+  name: "sinasc"
+  path: 
+    data: ""
+    meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinasc\\metadata_sinasc_2001_a_2020.csv"
+    dict: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinasc\\dic_sinasc_v3.ods"
+    outp: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinasc\\"
+
+  

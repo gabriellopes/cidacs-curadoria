@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "curadoria"
+version = "0.0.228"
+authors = [
+  { name="Gabriel Lopes", email="gabriellopes9102@gmail.com" },
+]
+description = "Uma tentativa de deploy para um pacote de funções e informações referente à curadoria digital de dados presente no CIDACS"
+readme = "readme.md"
+license = { file="LICENSE" }
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/cidacslab/curadoria"
+"Bug Tracker" = "https://github.com/cidacslab/curadoria/issues"
