@@ -59,3 +59,13 @@
 
 [URL_TO_PACKAGE](https://test.pypi.org/project/cidacs-curadoria-example-package-22-08-2022/0.0.1/)
 
+
+### Usability 
+
+. generate:
+
+> python generate.py -c ..\cidacs-curadoria\config-sim.yaml -k 18 -a 22 -H 'VAR','DESCRICAO','ANOS_PRESENTE' -dkey "Nome da Variável" -dattr "Descrição Original" -o "histor_teste-file_123-sim.csv"
+
+. from-meta-to-dict:
+
+> python from-meta-to-dict.py -m "..\..\data\sim\inspection\sim-histor_teste-file_123-sim.csv" -k 'VAR' -a 'ANOS_PRESENTE' -dfile "..\..\data\sim\inspection\dicionario_sim_2000_a_2015 - testes.ods" -dkey "Nome da Variável" -dattr "Anos Presente - the back"
