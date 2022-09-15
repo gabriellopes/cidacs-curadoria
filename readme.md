@@ -1,4 +1,4 @@
-# curadoria package v.0.0.2445
+# curadoria package v.0.0.244
 
 . obj: 
 	> Establish a code repository related to Digital Curation processes, taking as a use case the one existing in CIDACS, in order to facilitate maintenance, scalability, and evolution, in addition to deploying, of the code and its respective functionalities.
