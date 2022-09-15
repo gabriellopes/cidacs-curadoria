@@ -9,19 +9,19 @@
 	.csv, .dbf, .ods, 
 
 
-. /core 
+- /core 
 	- common functionalities shared among the modules 
 		e.g. extractHeader, readFiles, writeFiles,...,
 
-./descritivas
+- /descritivas
 	- functionalities related to [development of descriptives](https://gabriellopes.github.io/cidacs-curadoria/)
 		e.g. non-zero variables, frequency per variable, ...
 
-./dicionarios
+- /dicionarios
 	- funções relacionadas à buscas, escritas e populações de dicionarios
 		e.g. addFromHistoFileToDicio
 
-./validacao
+- /validacao
 	- funções relacionadas a validação de dados.
 		e.g. 
 
