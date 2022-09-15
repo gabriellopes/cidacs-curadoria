@@ -14,7 +14,7 @@
 		e.g. extractHeader, readFiles, writeFiles,...,
 
 ./descritivas
-	- functionalities related to development of descriptives
+	- functionalities related to [development of descriptives](https://gabriellopes.github.io/cidacs-curadoria/)
 		e.g. non-zero variables, frequency per variable, ...
 
 ./dicionarios
