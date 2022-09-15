@@ -9,7 +9,7 @@
 	.csv, .dbf, .ods, 
 
 
-./core 
+. /core 
 	- common functionalities shared among the modules 
 		e.g. extractHeader, readFiles, writeFiles,...,
 
