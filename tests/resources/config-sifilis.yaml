@@ -1,0 +1,10 @@
+
+database: 
+  name: "sinan-sifilis"
+  path: 
+    data: ""
+    meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\"
+    dict: ""
+    outp: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\inspection\\"
+
+  

@@ -1,0 +1,10 @@
+
+database: 
+  name: "sim"
+  path: 
+    data: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sim"
+    meta: ""
+    dict: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\dev\\cidacs-curadoria\\tests\\resources\\dicionario_sim_2000_a_2015 - teste.ods"
+    outp: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sim\\inspection\\"
+
+  
