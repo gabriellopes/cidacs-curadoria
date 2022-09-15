@@ -100,23 +100,3 @@
 
 
 
-##### token desgramado
-
-. Upar ao Pypi
-
-> pypi-AgENdGVzdC5weXBpLm9yZwIkYzRiMzVmYzktMDk5Yi00MTAyLWEwMDYtM2M5ZmQ4MTMzNmUwAAIleyJwZXJtaXNzaW9ucyI6ICJ1c2VyIiwgInZlcnNpb24iOiAxfQAABiAh8lkfhUYHaTIkDEAcDXz9ff8a5o69aXkkT9Ia4vExiA
-
-
-. Upgrade:
-
-> python -m pip install --index-url https://test.pypi.org/simple/ curadoria --upgrade
-
-	. python -m build (depois de alterar o arquivo .toml com a nova versão);
-	. python -m twine upload -u __token__ -p [token] --repository testpypi dist/*
-	. python -m pip install [...]
-
-
-> NOTA: é possível upar uma mesma versão sem precisar mudar a versão no .toml 
-
-
-
