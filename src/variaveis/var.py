@@ -11,27 +11,33 @@ from core 		 import core
 def get_year_by_variable(file, col_var, col_year, printable): #adaptar para quando for número, ver se é a posição no nome do arquivo
 	d_var_x_year = {}
 	
-	if(type(file) is dict): #melhorar diferenciação de quando file encapsula dados ou meta-dados
-		col_var = int(col_var)
-		col_year = int(col_year)
-		for key in file: 
-			year = key[col_var:col_year]
-			if(printable):
-				print("key: ",key, "year: ",year)
-			for var in file[key]:
+	if(type(file) is dict): #varios arquivos
+		for key in file: 							#for each file
+			for var in file[key][col_var]:
+				if(type(col_year) is range): 			#year as a range
+					col_year_1 = list(col_year)[0]
+					col_year_2 = list(col_year)[-1]
+					year = key[col_year_1:col_year_2] 	#ano no nome do arquivo
+
+				if(printable):
+					print("key: ",key, "year: ",year)
+
 				if(var not in d_var_x_year):
 					d_var_x_year[var] = list()
-				d_var_x_year[var].append(int(year)) #qnd adiciona a segunda já vira string a p td?
+				if(year not in d_var_x_year[var]):
+					d_var_x_year[var].append(int(year)) #qnd adiciona a segunda já vira string a p td?
+
 	elif(file is not None):
-		for var in file[col_var]: #for each variable
+		for var in file[col_var]: #for each variable in the same file
 			if(var not in d_var_x_year):
 				d_var_x_year[var] = list()
 				d_var_x_year[var].extend(file[file[col_var]==var][col_year].values)
 
 	if(printable):
-		print("DICIO:\n\n", d_var_x_year)
+		print("Result:\n\n", d_var_x_year)
 
 	return d_var_x_year #Dicio ou pandas frame
+
 
 # function to know if a number is surrounded by another one.
 

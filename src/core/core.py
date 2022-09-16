@@ -19,7 +19,6 @@ def get_file_extension(file_path, printable):
 
 def read_file(file_path, printable):
 	file_ext = get_file_extension(file_path,printable)
-
 	doc = {}
 
 	if(file_ext == ".ods"):
@@ -31,13 +30,16 @@ def read_file(file_path, printable):
 
 	elif(os.path.isdir(file_path)): #ponteiro a todos arquivos 
 		for file in os.listdir(file_path):
+			print("FILE: ", file)
 			if os.path.isfile(os.path.join(file_path, file)):
-				print("filename:\n",os.path.join(file_path, file)) #os.path.join(file_path,file))
-				doc[file] = get_header_from_csv(os.path.join(file_path, file),False) #pega somente os headers quando arquivo for diretório, provavelmente BASE: verificar
+				print("\n. filename:\n[",os.path.join(file_path, file),"]") #os.path.join(file_path,file))
+				#doc[file] = get_header_from_csv(os.path.join(file_path, file),False) #pega somente os headers quando arquivo for diretório, provavelmente BASE: verificar
+				doc[file] = pd.read_csv(os.path.join(file_path, file)).replace('"','').replace('\n','')
+				#dict, key: dataframe
 
 	if(doc is not None and printable):
 		print("file [",file_path,"] read successfully!\n:")
-		print(doc)
+		print("file read:\n" ,doc,"\n--")
 
 	return doc
 
@@ -65,14 +67,27 @@ def get_header_from_csv(csv_file, printable):
 	print("abrindo arquivo: \n"+csv_file,". . .")
 	with open(csv_file,"r") as a_file:
 		print("arquivo ["+csv_file+"] aberto com sucesso. . .")
-
+		delim = ''
 		data = a_file.readline()
-		list_cols_file = data.replace('"','').replace('\n','').split(';')
+
+		if(';' in data):
+			print("; delimitator")
+			delim = ';'
+		elif(',' in data):
+			print(", delimitator")
+			delim = ','
+
+		list_cols_file = data.replace('"','').replace('\n','').split(delim)
+		#list_cols_file = list_cols_file.split(',')
+
+		print("LIST:",list_cols_file)
 		
 		if(printable):
 			print(list_cols_file,"\n----\n total: ",len(list_cols_file))
 		return list_cols_file
 	print("--")
+
+
 
 def fromCSVToList(csv_file):
 	with open(csv_file,"r") as l_file:
