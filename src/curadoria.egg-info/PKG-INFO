@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: curadoria
-Version: 0.0.245
+Version: 0.0.247
 Summary: Uma tentativa de deploy para um pacote de funções e informações referente à curadoria digital de dados presente no CIDACS
 Author-email: Gabriel Lopes <gabriellopes9102@gmail.com>
 License: Copyright (c) 2018 The Python Packaging Authority

@@ -54,7 +54,6 @@ def read_config(file, printable):
 			config['meta'] = value['path']['meta'] #how to bring such tag config for generality.
 			config['outp'] = value['path']['outp']
 			config['dict'] = value['path']['dict']
-			config['data'] = value['path']['data']
 			config['name'] = value['name']
 
 
@@ -104,6 +103,12 @@ def fromCSVToList(csv_file):
 def write_file(header,output_file, content, printable):
 	ext = get_file_extension(output_file,True)
 
+	print("vou ver se é dir ou não: ",os.path.dirname(output_file))
+	if(not os.path.exists(os.path.dirname(output_file))):
+		print("Path [",output_file,"] don't exist: trying to create it.")
+		os.makedirs(os.path.dirname(output_file))
+		print("Path [",output_file,"] created successfully.")
+		
 	if(printable):
 		print("\nTrying to write according to the following: ")
 		print("file: [",output_file,"]\nheaders: [",header,"] | size: ",len(header),"\ncontent: ",content,"\n> type:",type(content),"\n---")

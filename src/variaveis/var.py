@@ -10,7 +10,8 @@ from core 		 import core
 #@printable: if it is needed to print the progressing steps throughout the method
 def get_year_by_variable(file, col_var, col_year, printable): #adaptar para quando for número, ver se é a posição no nome do arquivo
 	d_var_x_year = {}
-	
+	year = ''
+	print("col_var", col_var," col_year: ",col_year, "file: ",file)
 	if(type(file) is dict): #varios arquivos
 		for key in file: 							#for each file
 			for var in file[key][col_var]:
@@ -19,13 +20,13 @@ def get_year_by_variable(file, col_var, col_year, printable): #adaptar para quan
 					col_year_2 = list(col_year)[-1]
 					year = key[col_year_1:col_year_2] 	#ano no nome do arquivo
 
-				if(printable):
-					print("key: ",key, "year: ",year)
+					if(printable):
+						print("key: ",key, "year: ",year)
 
-				if(var not in d_var_x_year):
-					d_var_x_year[var] = list()
-				if(year not in d_var_x_year[var]):
-					d_var_x_year[var].append(int(year)) #qnd adiciona a segunda já vira string a p td?
+					if(var not in d_var_x_year):
+						d_var_x_year[var] = list()
+					if(year not in d_var_x_year[var]):
+						d_var_x_year[var].append(year) #qnd adiciona a segunda já vira string a p td?
 
 	elif(file is not None):
 		for var in file[col_var]: #for each variable in the same file
@@ -39,9 +40,11 @@ def get_year_by_variable(file, col_var, col_year, printable): #adaptar para quan
 	return d_var_x_year #Dicio ou pandas frame
 
 
-# function to know if a number is surrounded by another one.
 
+# function to know if a number is surrounded by another one.
+# caso 99 and 
 def is_surrounded(num1, num2):
+	print("Num1: ",num1,"\nnum2:",num2)
 	if(num1 == num2+1):
 		return True
 	if(num2 == num1+1):
