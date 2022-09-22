@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Especificação de descritivas v0.1</title>
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/ontology/iomust/internet_of_things","name":"", "headline":"", "datePublished":"", "version":"", "license":"", "author":[{"@type":"Person","name":"Gabriel Lopes"}], "contributor":[{"@type":"Person","name":""}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+<script src="resources/scripts/fixup.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Tabela de Conteúdos</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+ $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ };    $(function(){
+      $("#resumo").load("sections/abstract-en.html"); 
+      $("#introdução").load("sections/introduction-en.html"); 
+      $("#overview").load("sections/overview-en.html"); 
+      $("#references").load("sections/references-en.html"); 
+      $("#crossref").load("sections/crossref-en.html", null, loadHash); 
+    });
+    </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="header">
+	<img class="header" src="https://cidacs.bahia.fiocruz.br/wp-content/themes/cidacs/img/logo-header.svg" alt="logo"/>
+<h1>Dicionário Expandido</h1>
+<h2>Documento entregue em: 2022-08-18</h2>
+
+<dl>
+
+<!--Versioning of this Ontology, how to provide links for it?-->
+
+<dt>Essa versão v0.1:</dt>
+<dd><a href="modelo-exemplo.pdf">estrutura-descritivas.pdf</a></dd>
+
+<dt>Versão anterior:</dt>
+<dd><a href="https://fiocruzbr-my.sharepoint.com/personal/exemplo_usuario/modelo_descritivas/versoes/vx.y/...">estrutura-descritiva-v_X.Y.pdf</a></dd>
+<dt>Modelo disponível em:</dt>
+
+<dd><a href="https://fiocruzbr-my.sharepoint.com/personal/public/modelo_descritivas/versoes/">Repositório Público/Profissional de Descritivas</a></dd>
+
+<dt>Autores:</dt>
+<dd><a href="https://cidacs.bahia.fiocruz.br/equipe/maira-lima/">Maíra Souza, Fiocruz</a></dd>
+<dd><a href="https://cidacs.bahia.fiocruz.br/equipe/luiz-conrado-de-farias-neto/">Luís Conrado, Fiocruz</a></dd>
+<dd>Eric Carvalho, Fiocruz</dd>
+<dd>Priscila Normando, Fiocruz</dd>
+<dd><a href="https://cidacs.bahia.fiocruz.br/equipe/gabriel-lopes/">Gabriel Cavalcante, Fiocruz</a></dd>
+
+<dt>Contribuidores:</dt>
+<dd>Samilla Sena, ...</dd>
+
+<!--Modelo noutros formatos-->
+<dt>Outros formatos:</dt>
+<dd>
+	<a href="modelo-descritiva.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a>
+</dd>
+<dd>
+	<a href="../modelo-descritiva.md" target="_blank"><img src="https://img.shields.io/badge/Markdown-MD-yellow" alt="Markdown" /></a>
+</dd>
+
+</span></dd><dt>Licença: </dt><dd><a href="https://www.gnu.org/licenses/gpl.html" target="_blank"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="https://www.gnu.org/licenses/gpl.html" /></a>
+
+</dd><dt>Visualização:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+
+<div class="status">
+<div>
+<span>Especificação - Modelo de Descritivas</span>
+</div>
+</div>     <div id="abstract"></div>
+
+<div id="toc">
+	
+	<div id="intro"></div>
+     <div id="ack"></div>
+     <div id="crossref"></div>
+     <div id="references"></div>
+     <div id="changelog"></div>
+
+</div>
+<div id="reconhecimentos">
+<h2 id="ack" class="list">Reconhecimentos <span class="backlink"> voltar<a href="#toc">TdC</a></span></h2>
+<p>
+	Os autores gostariam de agradecer à Fiocruz pelo fornecimento de aparatos à possibilidades de construir soluções e resoluções a problemáticas em Serviços e Processos relacionados à Curadoria digital de Dados em parceria indireta com o Ministério da Saúde.
+</p>
+</div>
+
+<div id="Introdução">
+	<h2 id="intro" class="list">
+		Introdução
+		<span class="backlink">voltar<a href="#toc">TdC</a></span>
+	</h2>
+	<p>
+		A estrutura geral do arquivo de Descritivas segue um padrão desenvolvido pelo Núcleo de ... desde de. 
+		Portanto, este arquivo pode servir como um repositório central das especificações necessárias à confecção de uma descritiva sobre determinada base de dados. Facilitando, assim, tanto o desenvolvimento sobre elementos da especificação, como <i>'Gerar Relatório de Variáveis Nulas'</i>, quanto em sua manutenabilidade, propiciando, inclusive, um histórico nas atualizações deste documento. 
+	</p>
+</div>
+
+<div id="variaveis-nulas">
+	<h2 id="var_nulas" class="list">
+		Variáveis Nulas
+		<span class="backlink">voltar<a href="#toc">TdC</a></span>
+	</h2>
+	<p>
+		-> As variáveis nulas representam aquelas variáveis de preenchimento completamente ausentes ao longo da base de dados. (proveniência: de onde veio essa definição?)
+
+		ex: VAR | OBS_AUSENTES (%) | MIN | MAX LOCAL_DE_ATENDIMENTO 0 - 
+
+		<h4>
+			Exemplo:
+			<div> <img src="./resources/img/var-nulas.png"/></div>
+		</h4>
+	</p>
+</div>
+
+<div id="variaveis-nao-nulas">
+	<h2 id="var_nao_nulas" class="list">
+		Variáveis Não nulas
+		<span class="backlink">voltar<a href="#toc">TdC</a></span>
+	</h2>
+	<p>
+		-> [breve descrição]
+
+		ex: VAR| OBS_AUSENTES(%) MIN MAX SEXO 0 F M RACACOR 0 AMARELA SEM INFORMACAO …
+
+		<h4>
+			Exemplo:
+			<div> <img src="./resources/img/var-nao-nulas.png"/></div>
+		</h4>
+	</p>
+</div>
+
+<div id="variaveis-tipo-data">
+	<h2 id="var_tipo_data" class="list">
+		Variáveis Tipo Data 
+		<span class="backlink">voltar<a href="#toc">TdC</a></span>
+	</h2>
+	<p>
+		-> [breve descrição]
+
+		ex: VAR MIN MAX DATA_DE_REGISTRO_ACOMP 2011-01-03 10:20:24 2014-11-19 11:40:23 DATA_DE_ACOMPANHAMENTO 2011-01-01 03:00:00 2011-12-31 02:00:00
+
+		<h4>
+			Exemplo:
+			<div> <img src="./resources/img/var-tipo-data.png"/></div>
+		</h4>
+	</p>
+</div>
+
+<div id="frequencia-ano-data">
+	<h2 id="frequencia_ano_data" class="list">
+		Frequência ANO-DATA
+		<span class="backlink">voltar<a href="#toc">TdC</a></span>
+	</h2>
+	<p>
+		-> [breve descrição]
+
+		ex: [NOME_VAR] DATA_DE_REGISTRO_ACOMP
+
+		ANO | NUM_OBS | FREQ_OBS (%) 2011 21537369 63.191
+
+		<h4>
+			Exemplo:
+			<div> <img src="./resources/img/freq-ano_var_data.png"/></div>
+		</h4>
+
+		
+	</p>
+</div>
+
+<div id="frequencia-valores-variavel">
+	<h2 id="frequencia_valores_variavel" class="list">
+		Frequência de Valores por Variável (100)
+		<span class="backlink">voltar<a href="#toc">TdC</a></span>
+	</h2>
+	<p>
+		-> [breve descrição]
+
+		ex: [NOME_VAR] Variável RACACOR VALOR NUM_OBS FREQ_OBS(%) PARDA 11449200 33.592 SEM INFORMACAO 10290746 30.193 BRANCA 8648757 25.376 –
+
+		<h4>
+			Exemplo:
+			<div> <img src="./resources/img/freq-valor_variavel-100.png"/></div>
+		</h4>
+	</p>
+</div>
+
+<div id="frequencia-cross-table">
+	<h2 id="frequencia_cross_table" class="list">
+		Frequência entre Duas Variáveis (crosstable)
+		<span class="backlink">voltar<a href="#toc">TdC</a></span>
+	</h2>
+	<p>
+		-> [breve descrição]
+
+		ex: [NOME_VAR_1] [NOME_VAR_2]
+
+		[NOME_VAR_1] x [NOME_VAR_2]
+
+		Variável linha crosstable SEXO (virou linhas) Variável coluna crosstable RACACOR (virou colunas)
+
+		AMARELA BRANCA INDIGENA PARDA PRETA SEM.INFORMACAO M 582643 2423412 31566 2423287 253940 2588408 F 1442510 6225345 120796 9025913 1262685 7702338
+
+		<h4>
+			Exemplo:
+			<div> <img src="./resources/img/freq-duas_variaveis-crosstable.png"/></div>
+		</h4>
+	</p>
+</div>
+
+
+
+
+
+</div>
+</body>
+</html>

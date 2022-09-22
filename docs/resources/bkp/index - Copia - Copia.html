@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ <link rel="stylesheet" href="resources/primer.css" media="screen" />    <link rel="stylesheet" href="resources/rec.css" media="screen" />    <link rel="stylesheet" href="resources/extra.css" media="screen" />    <link rel="stylesheet" href="resources/owl.css" media="screen" />    <title>Internet of Musical Things Ontology (IoMusT)</title>
+
+
+<!-- SCHEMA.ORG METADATA -->
+<script type="application/ld+json">{"@context":"http://schema.org","@type":"TechArticle","url":"","image":"http://vowl.visualdataweb.org/webvowl/#iri=http://purl.org/ontology/iomust/internet_of_things","name":"", "headline":"", "datePublished":"", "version":"", "license":"", "author":[{"@type":"Person","name":"Gabriel Lopes"}], "contributor":[{"@type":"Person","name":""}]}</script>
+
+<script src="resources/jquery.js"></script> 
+<script src="resources/marked.min.js"></script> 
+    <script> 
+function loadHash() {
+  jQuery(".markdown").each(function(el){jQuery(this).after(marked(jQuery(this).text())).remove()});
+	var hash = location.hash;
+	if($(hash).offset()!=null){
+	  $('html, body').animate({scrollTop: $(hash).offset().top}, 0);
+}
+	loadTOC();
+}
+function loadTOC(){
+	//process toc dynamically
+	  var t='<h2>Tabela de Conteúdos</h2><ul>';i = 1;j=0;
+	  jQuery(".list").each(function(){
+		if(jQuery(this).is('h2')){
+			if(j>0){
+				t+='</ul>';
+				j=0;
+			}
+			t+= '<li>'+i+'. <a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+			i++;
+		}
+		if(jQuery(this).is('h3')){
+			if(j==0){
+				t+='<ul>';
+			}
+			j++;
+			t+= '<li>'+(i-1)+'.'+j+'. '+'<a href=#'+ jQuery(this).attr('id')+'>'+ jQuery(this).ignore("span").text()+'</a></li>';
+		}
+	  });
+	  t+='</ul>';
+	  $("#toc").html(t); 
+}
+ $.fn.ignore = function(sel){
+        return this.clone().find(sel||">*").remove().end();
+ };    $(function(){
+      $("#resumo").load("sections/abstract-en.html"); 
+      $("#introdução").load("sections/introduction-en.html"); 
+      $("#overview").load("sections/overview-en.html"); 
+      $("#references").load("sections/references-en.html"); 
+      $("#crossref").load("sections/crossref-en.html", null, loadHash); 
+    });
+    </script> 
+  </head> 
+
+<body>
+<div class="container">
+<div class="head">
+<div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
+<h1>Dicionário Expandido</h1>
+<h2>Documento entregue em: 2022-08-18</h2>
+
+<dl>
+
+<!--Versioning of this Ontology, how to provide links for it?-->
+
+<dt>Essa versão:</dt>
+<dd><a href="modelo-exemplo.pdf">estrutura-descritivas.pdf</a></dd>
+
+<dt>Versão anterior:</dt>
+<dd><a href="https://fiocruzbr-my.sharepoint.com/personal/exemplo_usuario/modelo_descritivas/versoes/vx.y/...">estrutura-descritiva-v_X.Y.pdf</a></dd>
+<dt>Modelo disponível em:</dt>
+
+<dd><a href="https://fiocruzbr-my.sharepoint.com/personal/public/modelo_descritivas/versoes/">Repositório Público/Profissional de Descritivas</a></dd>
+
+<dt>Autores:</dt>
+<dd><a href="https://cidacs.bahia.fiocruz.br/equipe/maira-lima/">Maíra Souza, Fiocruz</a></dd>
+<dd><a href="https://cidacs.bahia.fiocruz.br/equipe/luiz-conrado-de-farias-neto/">Luís Conrado, Fiocruz</a></dd>
+<dd>Eric Carvalho, Fiocruz</dd>
+<dd>Priscila Normando, Fiocruz</dd>
+<dd><a href="https://cidacs.bahia.fiocruz.br/equipe/gabriel-lopes/">Gabriel Cavalcante, Fiocruz</a></dd>
+
+<dt>Contribuidores:</dt>
+<dd>Samilla Sena, ...</dd>
+
+<!--Modelo noutros formatos-->
+<dt>Outros formatos:</dt>
+<dd>
+	<a href="modelo-descritiva.ttl" target="_blank"><img src="https://img.shields.io/badge/Format-TTL-blue.svg" alt="TTL" /></a>
+</dd>
+<dd>
+	<a href="modelo-descritiva.md" target="_blank"><img src="https://img.shields.io/badge/Markdown-MD-yellow" alt="Markdown" /></a>
+</dd>
+
+</span></dd><dt>Licença: </dt><dd><a href="https://www.gnu.org/licenses/gpl.html" target="_blank"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="https://www.gnu.org/licenses/gpl.html" /></a>
+
+</dd><dt>Visualização:</dt><dd><a href="webvowl/index.html#" target="_blank"><img src="https://img.shields.io/badge/Visualize_with-WebVowl-blue.svg" alt="Visualize with WebVowl" /></a></dd>
+<!-- <dt>Evaluation:</dt><dd><a href="OOPSEvaluation/OOPSeval.html#" target="_blank"><img src="https://img.shields.io/badge/Evaluate_with-OOPS! (OntOlogy Pitfall Scanner!)-blue.svg" alt="Evaluate with OOPS!" /></a></dd> -->
+
+<!--
+<dt>Cite as:</dt>
+<dd>Luca Turchet, Francesco Antoniazzi, Fabio Viola, Fausto Giunchiglia, György Fazekas, The Internet of Musical Things Ontology, Journal of Web Semantics, 2020, 100548, ISSN 1570-8268, https://doi.org/10.1016/j.websem.2020.100548.</dd>
+<dt>DOI:</dt>
+<dd><a href="http://dx.doi.org/https://doi.org/10.1016/j.websem.2020.100548"><img src ="https://img.shields.io/badge/DOI-https://doi.org/10.1016/j.websem.2020.100548-blue.svg" alt="https://doi.org/10.1016/j.websem.2020.100548" /></a></dd>
+</dl>
+<hr/>
+</div>
+-->
+
+<div class="status">
+<div>
+<span>Especificação - Modelo de Descritivas</span>
+</div>
+</div>     <div id="abstract"></div>
+<div id="toc"></div>     <div id="introduction"></div>
+     <div id="overview"></div>
+     <div id="crossref"></div>
+     <div id="references"></div>
+     <div id="changelog"></div>
+
+<div id="Reconhecimentos">
+<h2 id="ack" class="list">Reconhecimentos <span class="backlink"> voltar<a href="#toc">TdC</a></span></h2>
+<p>
+	Os autores gostariam de agradecer à Fiocruz pelo fornecimento de aparatos à possibilidades de construir soluções e resoluções a problemáticas em Serviços e Processos relacionados à Curadoria digital de Dados em parceria indireta com o Ministério da Saúde.
+</p>
+</div>
+
+<div id="Introdução">
+	<h2 id="intro" class="list">
+		Introdução
+		<span class="backlink">voltar<a href="#toc">TdC</a></span>
+	</h2>
+	<p>
+		A estrutura geral do arquivo de Descritivas segue um padrão desenvolvido pelo Núcleo de ... desde de 
+	</p>
+</div>
+
+
+</div>
+</body>
+</html>
