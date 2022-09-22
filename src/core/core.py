@@ -87,17 +87,6 @@ def get_header_from_csv(csv_file, printable):
 	print("--")
 
 
-
-def fromCSVToList(csv_file):
-	with open(csv_file,"r") as l_file:
-		reader = csv.reader(l_file)
-		rows = []
-		for row in reader:
-			rows.append(row)
-		return list(rows)
-
-
-
 # quebrar função: write_to_file, detectar se é CSV, qual tipo de dado se quer plotar no arquivo, se é dict, etc.
 
 def write_file(header,output_file, content, printable):

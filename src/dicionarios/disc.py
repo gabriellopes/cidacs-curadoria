@@ -2,7 +2,7 @@ from core 		 import core
 # module dedicated for dealing with dictionaries, specially in ods, csv and excel
 
 def funcao():
-	print("Sou uma função do módulo DICIONARIO  v0.0.25")
+	print("Sou uma função do módulo DICIONARIO  v0.0.245")
 
 
 #@key_list: lista com chaves a serem consultadas em dicio_file
