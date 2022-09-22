@@ -4,11 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "curadoria"
-<<<<<<< HEAD
 version = "0.0.247"
-=======
-version = "0.0.228"
->>>>>>> cd4dd7f7a7f2f2a9e003df9ab58f090bf5c726b3
 authors = [
   { name="Gabriel Lopes", email="gabriellopes9102@gmail.com" },
 ]
