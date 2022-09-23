@@ -1,0 +1,10 @@
+---
+
+database: 
+  name: "pbf-familia"
+  path: 
+    meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\pbf\\fam"
+    dict: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\pbf\\fam\\inspection\\metadata-pbf-familia_2021.ods"
+    outp: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\pbf\\fam\\inspection\\"
+
+    

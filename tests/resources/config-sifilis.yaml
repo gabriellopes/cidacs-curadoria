@@ -2,9 +2,9 @@
 database: 
   name: "sinan-sifilis"
   path: 
-    meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\ISIFI\\"
-    #meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\SIFICN\\"
-    meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\SIFGEN\\"
+    #meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\ISIFI\\"
+    meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\SIFICN\\"
+    #meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\SIFGEN\\"
     dict: ""
     outp: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\inspection\\"
 

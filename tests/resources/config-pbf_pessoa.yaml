@@ -1,0 +1,11 @@
+---
+
+database: 
+  name: "pbf-pessoa"
+  path: 
+    meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\pbf\\pes"
+    dict: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\pbf\\pes\\inspection\\metadata_pbf-pessoa_2021.ods"
+    outp: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\pbf\\pes\\inspection\\"
+
+
+  
