@@ -1,8 +1,5 @@
 LICENSE
-<<<<<<< HEAD
 README.md
-=======
->>>>>>> cd4dd7f7a7f2f2a9e003df9ab58f090bf5c726b3
 pyproject.toml
 src/core/__init__.py
 src/core/core.py

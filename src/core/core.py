@@ -25,17 +25,15 @@ def read_file(file_path, printable):
 		doc = pd.read_excel(file_path, engine='odf')
 
 	elif(file_ext == ".csv"):
-		if(printable): print("FILE CSV!")
 		doc = pd.read_csv(file_path).replace('"','')
 
 	elif(os.path.isdir(file_path)): #ponteiro a todos arquivos 
 		for file in os.listdir(file_path):
 			print("FILE: ", file)
 			if os.path.isfile(os.path.join(file_path, file)):
-				print("\n. filename:\n[",os.path.join(file_path, file),"]") #os.path.join(file_path,file))
-				#doc[file] = get_header_from_csv(os.path.join(file_path, file),False) #pega somente os headers quando arquivo for diretório, provavelmente BASE: verificar
+				if(printable): 
+					print("\n. filename:\n[",os.path.join(file_path, file),"]") #os.path.join(file_path,file))
 				doc[file] = pd.read_csv(os.path.join(file_path, file)).replace('"','').replace('\n','')
-				#dict, key: dataframe
 
 	if(doc is not None and printable):
 		print("file [",file_path,"] read successfully!\n:")
@@ -63,9 +61,9 @@ def read_config(file, printable):
 
 
 def get_header_from_csv(csv_file, printable):
-	print("abrindo arquivo: \n"+csv_file,". . .")
+	print("opening file: \n"+csv_file,". . .")
 	with open(csv_file,"r") as a_file:
-		print("arquivo ["+csv_file+"] aberto com sucesso. . .")
+		print("file ["+csv_file+"] opened successfully. . .")
 		delim = ''
 		data = a_file.readline()
 
@@ -77,9 +75,6 @@ def get_header_from_csv(csv_file, printable):
 			delim = ','
 
 		list_cols_file = data.replace('"','').replace('\n','').split(delim)
-		#list_cols_file = list_cols_file.split(',')
-
-		print("LIST:",list_cols_file)
 		
 		if(printable):
 			print(list_cols_file,"\n----\n total: ",len(list_cols_file))
@@ -87,12 +82,9 @@ def get_header_from_csv(csv_file, printable):
 	print("--")
 
 
-# quebrar função: write_to_file, detectar se é CSV, qual tipo de dado se quer plotar no arquivo, se é dict, etc.
-
 def write_file(header,output_file, content, printable):
 	ext = get_file_extension(output_file,True)
 
-	print("vou ver se é dir ou não: ",os.path.dirname(output_file))
 	if(not os.path.exists(os.path.dirname(output_file))):
 		print("Path [",output_file,"] don't exist: trying to create it.")
 		os.makedirs(os.path.dirname(output_file))
@@ -111,7 +103,6 @@ def write_file(header,output_file, content, printable):
 	if(printable):
 		print("Dictionary printed as file in ["+output_file+"] with success. . .")
 		print("-- \n meta:")
-		#print("SIZE: "+str(len(dictio.values())))
 	return
 
 def write_to_excel(output_file, data, printable):
@@ -122,7 +113,6 @@ def write_to_excel(output_file, data, printable):
 
 def write_dict_to_csv(header,output_file,dictio, printable):
 	df = pd.DataFrame.from_dict(dictio, orient='index').reset_index()
-	# mudança dos cabeçalhos para os passados por parâmetros
 	new_cols = {}
 	i=0
 	for c in df.columns:
@@ -131,8 +121,9 @@ def write_dict_to_csv(header,output_file,dictio, printable):
 		i = i + 1
 	
 	df = df.rename(columns=new_cols)
-	print("NEW_COLS: ",new_cols)
-	print("\n\n\n\nHEADER: ",header,"\n\n\nDF:\n",df)
+	if(printable):
+		print("Cols to be added: ",new_cols)
+		print("\n\n\n\nHEADERS: ",header,"\n\n\nDF:\n",df)
 	df.to_csv(output_file,index=False) 
 	return
 

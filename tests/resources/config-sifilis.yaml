@@ -5,7 +5,9 @@ database:
     #meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\ISIFI\\"
     meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\SIFICN\\"
     #meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\SIFGEN\\"
-    dict: ""
-    outp: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\inspection\\"
+    #dict: ""
+    #dict: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\SIFGEN\\inspection\\base_sifilis_gen_2007_a_2018_net.ods"
+    dict: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\SIFICN\\inspection\\base_sifilis_con_2007_a_2018_net.ods"
+    outp: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-sifilis\\SIFICN\\inspection\\"
 
   
