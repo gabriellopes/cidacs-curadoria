@@ -1,0 +1,9 @@
+
+database: 
+  name: "sinan-hans"
+  path: 
+    meta: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-hans"
+    dict: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-hans\\inspection\\sinan-hans_dicionario.ods"
+    outp: "C:\\Users\\gabriel.cavalcante\\Documents\\professional\\cidacs(git)\\workflow\\curadoria\\bases\\data\\sinan-hans\\inspection\\"
+
+  

@@ -1,5 +1,3 @@
-import csv
-import pandas as pd
 from core 		 import core
 # module dedicated for treating with variables, such as transformations, concatenations, and so on.
 
